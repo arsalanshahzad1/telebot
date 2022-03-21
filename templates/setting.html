@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+
+{% block title %}Add Message{% endblock %}
+
+{% block head %}
+{{ super() }}
+<style type="text/css">
+    .important {
+        color: #336699;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1>Settings </h1>
+
+    <form action="{{ url_for('update_setting') }}" method="post">
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">API ID</label>
+            <input type="text" class="form-control" name="app_id" value="{{setting['API_ID']}}" id="exampleInputEmail1"  aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">API HASH</label>
+            <input type="text" class="form-control" name="api_hash" value="{{setting['API_HASH']}}" id="exampleInputPassword1">
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">BOT TOKEN</label>
+            <input type="text" class="form-control" name="bot_token" value="{{setting['BOT_TOKEN']}}" id="exampleInputPassword1">
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">PHONE</label>
+            <input type="text" class="form-control" name="phone" value="{{setting['PHONE']}}" id="exampleInputPassword1">
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">CHANNEL NAME</label>
+            <input type="text" class="form-control" name="channel_name" value="{{setting['CHANNEL_NAME']}}" id="exampleInputPassword1">
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">GROUP NAME</label>
+            <input type="text" class="form-control" name="group_name" value="{{setting['GROUP_NAME']}}" id="exampleInputPassword1">
+        </div>
+        <button type="submit" class="btn btn-primary">SAVE</button>
+    </form>
+</div>
+
+
+{% endblock %}

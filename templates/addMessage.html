@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block title %}Add Message{% endblock %}
+
+{% block head %}
+{{ super() }}
+<style type="text/css">
+    .important {
+        color: #336699;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1>Add Bot Messages</h1>
+
+    <form action="{{ url_for('save') }}" method="post">
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Command</label>
+            <input type="text" class="form-control" id="exampleInputEmail1" name="botCommand" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Message</label>
+            <input type="text" class="form-control" name="botMessage" id="exampleInputPassword1">
+        </div>
+        <button type="submit" class="btn btn-primary">SAVE</button>
+    </form>
+</div>
+
+
+{% endblock %}

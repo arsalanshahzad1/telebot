@@ -1,0 +1,10 @@
+Flask Website:
+	Import mySql Database
+	setup website app.python and templates 
+	configure database in app.python file
+
+Bot:
+	Telebot folder setup cron job on getChannelMembers.python 
+	After complete first cron then run cron job on addMembersToGroup.python 
+	botReply.python run continously to auto reply users
+	configure database in all three files
